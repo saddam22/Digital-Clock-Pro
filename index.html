@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Smart Clock App</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="bg-gray-900 text-white min-h-screen flex flex-col items-center justify-center">
+
+<h1 class="text-4xl font-bold mb-6">Smart Clock</h1>
+
+<!-- Digital Clock -->
+
+<div id="digitalClock"
+class="text-5xl font-mono bg-gray-800 px-8 py-4 rounded-xl shadow-lg mb-4">
+00:00:00
+</div>
+
+<!-- Analog Clock -->
+
+<div class="clock mb-6">
+<div id="hour" class="hand hour"></div>
+<div id="minute" class="hand minute"></div>
+<div id="second" class="hand second"></div>
+</div>
+
+<!-- Timezone Clock -->
+
+<div class="grid grid-cols-3 gap-4 mb-6 text-center">
+
+<div class="bg-gray-800 p-4 rounded">
+USA
+<div id="usa"></div>
+</div>
+
+<div class="bg-gray-800 p-4 rounded">
+UK
+<div id="uk"></div>
+</div>
+
+<div class="bg-gray-800 p-4 rounded">
+Japan
+<div id="japan"></div>
+</div>
+
+</div>
+
+<!-- Alarm -->
+
+<div class="mb-4">
+
+<input type="time" id="alarmTime"
+class="text-black px-2 py-1 rounded">
+
+<button onclick="setAlarm()"
+class="bg-blue-500 px-4 py-1 rounded">
+Set Alarm
+</button>
+
+</div>
+
+<!-- Stopwatch -->
+
+<div class="mb-4 text-center">
+
+<h2 id="stopwatch" class="text-2xl mb-2">00:00</h2>
+
+<button onclick="startStopwatch()" class="bg-green-500 px-3 py-1 rounded">Start</button>
+
+<button onclick="stopStopwatch()" class="bg-red-500 px-3 py-1 rounded">Stop</button>
+
+<button onclick="resetStopwatch()" class="bg-yellow-500 px-3 py-1 rounded">Reset</button>
+
+</div>
+
+<!-- Timer -->
+
+<div class="mb-4 text-center">
+
+<input type="number" id="timerInput"
+placeholder="Seconds"
+class="text-black px-2 py-1 rounded">
+
+<button onclick="startTimer()"
+class="bg-purple-500 px-3 py-1 rounded">
+Start Timer
+</button>
+
+<h3 id="timerDisplay"></h3>
+
+</div>
+
+<!-- Theme -->
+
+<div class="mb-4">
+
+<input type="color" id="colorPicker">
+
+<button onclick="toggleMode()"
+class="bg-gray-700 px-3 py-1 rounded">
+Dark / Light
+</button>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
